@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>National Population Commission</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+</head>
+<body>
+  <header class="header">
+    <img src="https://nationalpopulation.gov.ng/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoG-250x45%402x.ca0a4aae.png&w=828&q=75" alt="">
+  </header>
+  <nav class="nav">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="service">
+        <a href="#">Service</a>
+        <ul class="service-dropdown">
+          <li><a href="/form/birthcertregform.html">Birth Certificate Registration</a></li>
+          <li><a href="/form/deathcertregform.html">Death Certificate Registration</a></li>
+          <li><a href="/form/declaration-of-age.html">Request for Attestation</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <div class="avatar-name">
+      <h2>Welcome: <span>John Doe</span></h2>
+    </div>
+  </nav>
+  <div class="content">
+    <div class="banner-tag">
+      <!-- <h2>CIVIL REGISTRATION AND VITAL STATISTICS</h2> -->
+      <button id="trackProgressBtn">Track Progress</button>
+    </div>
+    <img src="/images/banner_2.jpg" alt="Green Nigeria">
+  </div>
+  <footer class="footer">
+    <p>Copyright &copy; 2023 National Population Commission</p>
+  </footer>
+  <div class="modal" id="trackProgressModal">
+    <div class="modal-content">
+      <h2 id="progressHeading">Kindly wait while your application is being verified by the Registrar</h2>
+      <button class="check" id="checkBirthCertBtn" disabled><a href="/certificate/birthcertificate.html">Check Birth Certificate</a></button> <br>
+      <button class="check" id="checkDeathCertBtn" disabled><a href="#">Check Death Certificate</a></button> <br>
+      <button class="check" id="checkAttestationBtn" disabled><a href="#">Check Attestation</a></button>
+    </div>
+  </div>
+  <script src="/dashboard.js"></script>
+</body>
+</html>
+

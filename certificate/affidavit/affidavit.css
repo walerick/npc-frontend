@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 30px 8rem 30px 8rem;
+    /* margin: 5rem; */
+    /* border: 1px solid red; */
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    text-align: justify;
+}
+
+span{
+    font-weight: bolder;
+}
+
+.affidavit-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.affidavit-section {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 60px;
+}
+
+.signature p {
+    border-top: 1px solid #000;
+    width: 150px;
+    margin: 10px auto 0;
+}

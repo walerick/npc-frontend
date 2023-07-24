@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birth Certificate Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="/form/birthcertregform.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="">
+        <h2>FEDERAL REPUBLIC OF NIGERIA</h2>
+        <h1>NATIONIONAL POPULATION COMMISSION</h1>
+        <h1>LIVE BIRTH REGISTERATION FORM(FORM B.1)</h1>
+    </header>
+
+
+  <form id="registrationForm">
+
+    <!-- PARTICULARS OF CHILD -->
+    <fieldset class="form-section">
+      <legend>PARTICULARS OF CHILD</legend>
+      <label for="childname">Name of Child:</label>
+      <input type="text" id="childname" name="childname" required>
+      <label for="dateofbirth">Child's Date of Birth:</label>
+      <input type="date" id="dateofbirth" name="dateofbirth" required>
+      <label for="gender">Sex:</label>
+      <input type="radio" id="gender" name="gender" value="male" checked> Male 
+      <input type="radio" id="gender" name="gender" value="female" > Female <br>
+      <label for="placeofbirth">Local Government:</label>
+      <select name="placeofbirth" id="placeofbirth">
+        <option value="ileife">Ile-ife</option>
+        <option value="osogbo">Osogbo</option>
+        <option value="ilesha">Ilesha</option>
+      </select>
+      <label for="typeOfBirth">Type of Birth:</label>
+      <input type="radio" id="typeOfBirth" name="typeOfBirth" value="single" checked> Single
+      <input type="radio" id="typeOfBirth" name="typeOfBirth" value="multiple"> Multiple <br>
+      <button type="button" class="next">Next</button>
+    </fieldset>
+
+    <!-- PARTICULARS OF MOTHER -->
+    <fieldset class="form-section">
+        <legend>PARTICULARS OF MOTHER</legend>
+        <label for="mothername">Mother's Name:</label>
+        <input type="text" id="mothername" name="mothername" required>
+
+        <label for="address">Address of Usual place of Residence:</label>
+        <input type="text" id="motherAddress" name="motherAddress" required>  
+
+        <label for="age">Age at Birth of Child:</label>
+        <input type="text" id="motherAge" name="motherAge" required>
+
+
+        
+        <label for="maritalStatus">Marital Status:</label>
+        <input type="text" id="motherMaritalStatus" name="motherMaritalStatus" required> 
+
+        <label for="nationality">Nationality:</label>
+        <input type="radio" id="motherNationality" name="motherNationality" value="Nigerian"> Nigerian
+        <input type="radio" id="motherNationality" name="motherNationality" value="Non Nigerian"> Non Nigeria <br>
+        
+
+
+        <label for="stateOfOrigin">State of Origin:</label>
+        <select name="stateOfOrigin" id="stateOfOrigin">
+          <option value="osun">Osun</option>
+        </select>
+
+        <label for="lga">Local Government:</label>
+        <select name="lga" id="select">
+          <option value="osogbo">Osogbo</option>
+          <option value="ife">Ile-ife</option>
+          <option value="ilesha">Ilesha</option>
+        </select>
+
+
+        <button type="button" class="previous">Previous</button>
+        <button type="button" class="next">Next</button>
+      </fieldset>
+
+    <!-- PARTICULARS OF FATHER -->      
+    <fieldset class="form-section">
+        <legend>PARTICULARS OF FATHER</legend>
+        <label for="fathername">Father's Name:</label>
+        <input type="text" id="fathername" name="fathername" required>
+
+        <label for="address">Address of Usual place of Residence:</label>
+        <input type="text" id="fatherAddress" name="fatherAddress" required> 
+
+        <label for="age">Age at Birth of Child:</label>
+        <input type="text" id="fatherAge" name="fatherAge" required>
+
+        <label for="maritalStatus">Marital Status:</label>
+        <input type="text" id="fatherMaritalStatus" name="fatherMaritalStatus" required> 
+
+        <label for="nationality">Nationality:</label>
+        <input type="radio" id="fatherNationality" name="fatherNationality" value="Nigerian"> Nigerian
+        <input type="radio" id="fatherNationality" name="fatherNationality" value="Non Nigerian"> Non Nigeria <br>
+
+        <label for="stateOfOrigin">State of Origin:</label>
+        <select name="stateOfOrigin" id="stateOfOrigin">
+          <option value="osun">Osun</option>
+        </select>
+
+        <label for="lga">Local Government:</label>
+        <select name="lga" id="select">
+          <option value="osogbo">Osogbo</option>
+          <option value="ife">Ile-ife</option>
+          <option value="ilesha">Ilesha</option>
+        </select>
+
+
+
+        <button type="button" class="previous">Previous</button>
+        <button type="button" class="next">Next</button>
+    </fieldset>
+
+    
+    <!-- PARTICULARS OF INFORMANT -->
+   
+    <fieldset class="form-section">
+      <legend>PARTICULARS OF INFORMANT</legend>
+      <label for="informantName">Informant's Name:</label>
+      <input type="text" id="informantName" name="informantName" required>
+      <label for="informantRelationship">Informant's Relationship to Child:</label>
+      <input type="text" id="informantRelationship" name="informantRelationship" required>
+      <button type="button" class="previous">Previous</button>
+      <input type="submit" class="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <!-- STEPPERS -->
+
+  <div class="stepper">
+    <div class="step">
+      <span>1</span>
+      <p>Particulars of Child</p>
+    </div>
+    <div class="step">
+      <span>2</span>
+      <p>Particulars of Mother</p>
+    </div>
+    <div class="step">
+      <span>3</span>
+      <p>Particulars of Father</p>
+    </div>
+    <div class="step">
+      <span>4</span>
+      <p>Particulars of Informant</p>
+    </div>
+  </div>
+  <script src="/form/birthcertregform.js"></script>
+</body>
+</html>

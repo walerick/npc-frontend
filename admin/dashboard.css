@@ -1,0 +1,95 @@
+/* Reset */
+body {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* Header */
+.header {
+    background-color: #f3f4f6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  /* Navigation */
+  .nav {
+    background-color: #e3e6e9;
+    padding: 20px;
+    padding-left: 20%;
+    display: flex;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    margin-right: 8rem;
+  }
+  
+  .nav a {
+    color: #000;
+  }
+  
+  /* Content */
+  .content {
+    background-color: #fff;
+    position: relative;
+  }
+  .banner-tag{
+    position: absolute;
+    margin: 10rem;
+  }
+  .banner-tag h2 {
+    color: #ffffff;
+    font-size: 40px;
+  }
+  .banner-tag a{
+    color: #4dac76;
+  }
+  .content img {
+    width: 100%;
+  }
+
+  /* Button */
+  button{
+    background-color: #f3f4f6;
+    color: black;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #bca161;
+  }
+  .approve-btn{
+    background-color: lightblue;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #f3f4f6;
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin-bottom: 0;
+  }
+  

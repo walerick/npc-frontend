@@ -1,0 +1,118 @@
+/* Reset */
+body {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* Header */
+.header {
+    background-color: #f3f4f6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 40px;
+  }
+  
+  /* Navigation */
+  .nav {
+    background-color: #e3e6e9;
+    padding: 20px;
+    padding-left: 20%;
+    display: flex;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    display: inline-block;
+    margin-right: 11rem;
+  }
+  
+  .nav a {
+    color: #000;
+  }
+
+/* Dropdown Content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #e3e6e9;
+  /* padding: 10px; */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content li {
+  margin-block: 1rem;
+  display: block;
+  margin-left: 1rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+  
+  /* Content */
+  .content {
+    background-color: #fff;
+    position: relative;
+    /* padding: 20px; */
+  }
+  .banner-tag{
+    position: absolute;
+    margin: 10rem;
+  }
+  .banner-tag h2 {
+    color: #ffffff;
+    font-size: 40px;
+  }
+  .banner-tag a{
+    color: #4dac76;
+  }
+  .content img {
+    width: 100vw;
+  }
+
+  /* Button */
+  button{
+    background-color: #f3f4f6;
+    color: black;
+    font-size: 16px;
+    padding: 15px 30px;
+    /* margin-bottom: 3rem; */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #bca161;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #f3f4f6;
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin-bottom: 0;
+  }
+  

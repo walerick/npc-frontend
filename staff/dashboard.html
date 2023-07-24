@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>National Population Commission</title>
+  <link rel="stylesheet" href="/staff/dashboard.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon" style="border-radius: 100%;">
+</head>
+<body>
+  <header class="header">
+    <img src="https://nationalpopulation.gov.ng/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoG-250x45%402x.ca0a4aae.png&w=828&q=75" alt="">
+  </header>
+  <nav class="nav">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="#">Change Password</a></li>
+      <li class="dropdown">
+        <a href="#">View Certificates</a>
+        <ul class="dropdown-content">
+          <li>Birth Certificate</li>
+          <li>Death Certificate</li>
+          <li>Birth Attestation</li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Pending Registration</a>
+        <ul class="dropdown-content">
+          <li id="pendingBirth">Birth Certificate</li>
+          <li id="pendingDeath">Death Certificate</li>
+          <li id="pendingAttestation">Birth Attestation</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="content">
+    <img src="/images/security.jpg" alt="">
+  </div>
+  <footer class="footer">
+    <p>Copyright &copy; 2023 National Population Commission</p>
+  </footer>
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h1>New User Data</h1>
+      <h2>Name of Child: <span>John Doe</span></h2>
+      <h2>Date of Birth: <span>01-01-2000</span></h2>
+      <h2>Gender: <span>Male</span></h2>
+      <h2>Place of Birth: Osun</h2>
+      <button class="approve-btn">Approve</button>
+      <button class="decline-btn">Decline</button>
+    </div>
+  </div>
+  <script src="/staff/dashboard.js"></script>
+</body>
+</html>

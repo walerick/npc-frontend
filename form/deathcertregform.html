@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birth Certificate Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="/form/deathcertregform.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="">
+        <h2>FEDERAL REPUBLIC OF NIGERIA</h2>
+        <h1>NATIONIONAL POPULATION COMMISSION</h1>
+        <h1>DEATH REGISTRATION</h1>
+    </header>
+
+
+  <form id="registrationForm">
+
+    <!-- PARTICULARS OF DECEASED -->
+    <fieldset class="form-section">
+      <legend>PARTICULARS OF DECEASED</legend>
+
+      <label for="name">Name of Deceased:</label>
+      <input type="text" id="childName" name="childName" required>
+
+      <label for="sex">Sex:</label>
+      <input type="radio" id="sex" name="sex" value="male" checked> Male 
+      <input type="radio" id="sex" name="sex" value="female" > Female <br>
+
+
+      <label for="dod">Death of Death:</label>
+      <input type="date" id="dod" name="dod" required>
+
+
+      <label for="town">Village/Town:</label>
+      <input type="text" id="town" name="town" required>
+
+      <label for="age">Age at Birth of Child:</label>
+      <input type="text" id="age" name="age" required>
+
+      <label for="address">Address of Usual place of Residence:</label>
+      <input type="text" id="address" name="address" required>  
+
+      <label for="nationality">Nationality:</label>
+      <input type="radio" id="nigerian" name="nigerian" value="Nigerian"> Nigerian
+      <input type="radio" id="nonNigerian" name="nonNigerian" value="Non Nigerian"> Non Nigeria <br>
+
+      <label for="maritalStatus">Marital Status:</label>
+      <input type="text" id="maritalStatus" name="maritalStatus" required> 
+
+      <label for="cause">Cause of death:</label>:</label>
+      <input type="text" id="cause" name="cause" required>   
+
+      <button type="button" class="next">Next</button>
+    </fieldset>
+
+
+    
+    <!-- PARTICULARS OF INFORMANT -->
+   
+    <fieldset class="form-section">
+      <legend>PARTICULARS OF INFORMANT</legend>
+
+      <label for="informantName">Informant's Name:</label>
+      <input type="text" id="informantName" name="informantName" required>
+
+      <label for="informantRelationship">Informant's Relationship to Child:</label>
+      <input type="text" id="informantRelationship" name="informantRelationship" required>
+
+      <label for="address">Address of Usual place of Residence:</label>
+      <input type="text" id="informantAddress" name="informantAddress" required> 
+
+      <button type="button" class="previous">Previous</button>
+      <input type="submit" class="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <!-- STEPPERS -->
+
+  <div class="stepper">
+    <div class="step">
+      <span>1</span>
+      <p>Particulars of Child</p>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <p>Particulars of Informant</p>
+    </div>
+  </div>
+  <script src="/form/birthcertregform.js"></script>
+</body>
+</html>

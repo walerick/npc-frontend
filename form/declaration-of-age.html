@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birth Certificate Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="/form/declaration-of-age.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="">
+        <h2>FEDERAL REPUBLIC OF NIGERIA</h2>
+        <h1>NATIONIONAL POPULATION COMMISSION</h1>
+        <h1>ATTESTATION FORM(FORM B.1)</h1>
+    </header>
+
+
+  <form id="attestationForm">
+
+    <!-- PARTICULARS OF APPLICANT -->
+    <fieldset class="form-section">
+      <legend>PARTICULARS OF APPLICANT</legend>
+      <label for="childname">Name:</label>
+      <input type="text" id="childname" name="childname" required>
+      <label for="dateofbirth">Date of Birth:</label>
+      <input type="date" id="dateofbirth" name="dateofbirth" required>
+      <label for="age">age:</label>
+      <input type="text" name="age" id="age">
+      <label for="placeofbirth">Local Government:</label>
+      <select name="placeofbirth" id="placeofbirth">
+        <option value="ileife">Ile-ife</option>
+        <option value="osogbo">Osogbo</option>
+        <option value="ilesha">Ilesha</option>
+      </select>
+      <label for="state">State:</label>
+      <select name="state" id="state">
+        <option value="osun">Osun</option>
+      </select>
+      <label for="nin">NIN:</label>
+      <input type="text" name="nin" id="nin">
+ 
+      <button type="button" class="next step-btn">Next</button>
+
+    </fieldset>
+
+    <!-- PARTICULARS OF MOTHER -->
+    <fieldset class="form-section">
+        <legend>PARTICULARS OF MOTHER</legend>
+        <label for="mothername">Mother's Name:</label>
+        <input type="text" id="mothername" name="mothername" required>
+
+        <label for="state">State:</label>
+        <select name="motherState" id="motherState">
+          <option value="osun">Osun</option>
+        </select>
+
+        <label for="lga">Local Government:</label>
+        <select name="motherLga" id="motherLga">
+          <option value="osogbo">Osogbo</option>
+          <option value="ife">Ile-ife</option>
+          <option value="ilesha">Ilesha</option>
+        </select>
+
+
+        <button type="button" class="previous">Previous</button>
+        <button type="button" class="next step-btn">Next</button>
+
+      </fieldset>
+
+    <!-- PARTICULARS OF FATHER -->      
+    <fieldset class="form-section">
+        <legend>PARTICULARS OF FATHER</legend>
+        <label for="fathername">Father's Name:</label>
+        <input type="text" id="fathername" name="fathername" required>
+
+        <label for="state">State:</label>
+        <select name="fatherState" id="fatherState">
+          <option value="osun">Osun</option>
+        </select>
+
+        <label for="lga">Local Government:</label>
+        <select name="lga" id="fatherLga">
+          <option value="osogbo">Osogbo</option>
+          <option value="ife">Ile-ife</option>
+          <option value="ilesha">Ilesha</option>
+        </select>
+
+        <button type="button" class="previous">Previous</button>
+        <input type="submit" class="submit" value="Submit">
+    </fieldset>
+  </form>
+
+  <!-- STEPPERS -->
+
+  <div class="stepper">
+    <div class="step">
+      <span>1</span>
+      <p>Applicant</p>
+    </div>
+    <div class="step">
+      <span>2</span>
+      <p>Mother</p>
+    </div>
+    <div class="step">
+      <span>3</span>
+      <p>Father</p>
+    </div>
+  </div>
+  <script src="/form/declaration-of-age.js"></script>
+</body>
+</html>
