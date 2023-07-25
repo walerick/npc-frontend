@@ -79,13 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateofbirth = document.getElementById("dateofbirth").value;
     const placeofbirth = document.getElementById("placeofbirth").value;
     const age = document.getElementById("age").value;
-    // const mothername = document.getElementById("mothername").value;
-    // const motherAddress = document.getElementById("motherAddress").value;
-    // const stateOfOrigin = document.getElementById("stateOfOrigin").value;
-    // const lga = document.getElementById("select").value;
-    // const fathername = document.getElementById("fathername").value;
-    // const fatherAddress = document.getElementById("fatherAddress").value;
-    // const fatherAge = document.getElementById("fatherAge").value;
 
     // Step 4: Create the AttestationRequest object
     const attestRequest = {
@@ -94,6 +87,32 @@ document.addEventListener("DOMContentLoaded", function () {
       attest_age: age,
       attest_lg: placeofbirth,
     };
+
+    // Step 2: Extract data from the form
+    const mothername = document.getElementById("mothername").value;
+    const motherState = document.getElementById("motherState").value;
+    const motherLga = document.getElementById("motherLga").value;
+    const fathername = document.getElementById("fathername").value;
+    const fatherState = document.getElementById("fatherState").value;
+    const fatherLga = document.getElementById("fatherLga").value;
+
+    // Step 3: Create an object to store all the data
+    const formData = {
+      childname,
+      dateofbirth,
+      placeofbirth,
+      age,
+      nin,
+      mothername,
+      motherState,
+      motherLga,
+      fathername,
+      fatherState,
+      fatherLga,
+    };
+
+    // Step 4: Store the form data in localStorage
+    localStorage.setItem("formData", JSON.stringify(formData));
 
     // Step 5: Make the API request to update attest details
     fetch(`http://localhost:8080/api/v1/attest/${nin}`, {
@@ -107,11 +126,19 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         // Step 6: Handle the response data if necessary
         console.log("Updated User Data:", data);
+        // Save the `attest_id` in localStorage
+        const attestId = data.attestid;
+        localStorage.setItem("attestId", attestId);
         // You can perform further actions or show success messages here
       })
       .catch((error) => {
         console.error("Error updating attest details:", error);
         // Handle errors here, show error messages, etc.
       });
+
+    // Step 7: Store the NIN value in localStorage
+    const ninInput = document.getElementById("nin");
+    const ninValue = ninInput.value;
+    localStorage.setItem("nin", ninValue);
   });
 });

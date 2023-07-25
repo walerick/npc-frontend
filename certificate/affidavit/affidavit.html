@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,19 +14,20 @@
         <h2>HOLDEN AT OSOGBO</h2>
         <br>
         <h2>STATUTORY DECLARATION OF AGE</h2>
+        <h3 class="rightId" style="text-align: right;">Issue Id: #<span class="attest-id">spo</span>  </h3>
 
         <div class="letter-body">
             <p>
-                I, <span class="name">JOHN DOE MILL</span> , in Osogbo Local Government Area of Osun State of Nigeria, a true citizen of the Federal Republic of Nigeria, currently residing in <span class="address"> address XYZ</span>, do hereby depose an oath and state as follows:
+                I, <span class="attest-name">JOHN DOE MILL</span> , in <span class="fatherlga">Osogbo</span> Local Government Area of Osun State of Nigeria, a true citizen of the Federal Republic of Nigeria, currently residing in <span class="placeofbirth"> address XYZ</span>, do hereby depose an oath and state as follows:
             </p>
             <p>
                 1. That I am the deponent on record. <br>
             </p>
             <p>
-                2. That my name is <span class="nam">JOHN DOE MILL</span> <br>
+                2. That my name is <span class="attest-name">JOHN DOE MILL</span> <br>
             </p>
             <p>
-                3.That I was born on the <span class="dob">22-05-2023</span> at <span class="lga">Osogbo</span> Local Government , in <span class="state">Osun state</span> of Nigeria.<br>
+                3.That I was born on the <span class="attest-date">22-05-2023</span> at <span class="lga">Osogbo</span> Local Government , in <span class="state">Osun state</span> of Nigeria.<br>
             </p>
             <p>
                 4. That at the time of my birth, my date of birth was not registered officially, but it was recorded in te family birth Register, for record purposes.<br>
@@ -53,5 +54,54 @@
 
 
     </div>
+
+   <!-- Add this script tag in the <head> section of your HTML file -->
+<!-- Add this script tag in the <head> section of your HTML file -->
+    <script>
+        // Function to format the date to "day-month-year" format
+        function formatDateToDMY(dateString) {
+          const dateObj = new Date(dateString);
+          const day = dateObj.getDate().toString().padStart(2, '0');
+          const month = (dateObj.getMonth() + 1).toString().padStart(2, '0'); // January is 0
+          const year = dateObj.getFullYear().toString();
+          return `${day}-${month}-${year}`;
+        }
+      
+        // Function to fetch data from the endpoint and update the HTML elements
+        async function fetchAndPopulateData() {
+          try {
+            // Get the attestId from the localStorage
+            const attestId = localStorage.getItem('attestId');
+      
+            if (!attestId) {
+              console.error('attestId not found in localStorage.');
+              return;
+            }
+      
+            const response = await fetch(`http://localhost:8080/api/v1/attest/attestid?attest_id=${attestId}`);
+            const data = await response.json();
+      
+            // Update the HTML elements with the fetched data
+            document.querySelector('.attest-id').textContent = data.attestId;
+            document.querySelector('.attest-name').textContent = data.attestName;
+            document.querySelector('.fatherlga').textContent = data.attestLg;
+            document.querySelector('.placeofbirth').textContent = data.attestPlaceOfBirth;
+            
+            // Format the date to "day-month-year" format and update the HTML element
+            const formattedDate = formatDateToDMY(data.attestDate);
+            document.querySelector('.attest-date').textContent = formattedDate;
+            
+            document.querySelector('.lga').textContent = data.attestLGA;
+            document.querySelector('.state').textContent = data.attestState;
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        }
+      
+        // Call the function to fetch and populate data when the page loads
+        document.addEventListener('DOMContentLoaded', fetchAndPopulateData);
+      </script>
+      
+  
 </body>
 </html>

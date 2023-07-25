@@ -2,7 +2,7 @@
 localStorage.getItem("name", name.value);
 // localStorage.getItem("date_of_birth", dateOfBirth.value);
 // localStorage.getItem("gender", gender.value);
-localStorage.setItem("approve", "0");
+localStorage.setItem("approveBirthCert", "0");
 
 const trackProgressBtn = document.getElementById("pendingBirth");
 const trackProgressModal = document.getElementById("modal");
@@ -20,13 +20,13 @@ window.onclick = (event) => {
 
 // Function to handle the click event of the "Approve" button
 function handleApproveClick() {
-  localStorage.setItem("approve", "1");
+  localStorage.setItem("approveBirthCert", "1");
   alert("You have approved the data.");
 }
 
 // Function to handle the click event of the "Decline" button
 function handleDeclineClick() {
-  localStorage.setItem("approve", "0");
+  localStorage.setItem("approveBirthCert", "0");
   alert("You have declined the data.");
 }
 

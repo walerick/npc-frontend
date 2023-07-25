@@ -28,7 +28,7 @@ document
       .then((data) => {
         // Perform further actions with the user's credentials
         // For example, redirect to the dashboard
-        window.location.href = "/registrar/dashboard.html";
+        window.location.href = "/staff/dashboard.html";
       })
       .catch((error) => {
         // Handle login failure or any other errors

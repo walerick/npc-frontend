@@ -10,10 +10,70 @@
     <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="" style="width: 65px;">
     <h1>Registrar</h1>
     <h2></h2>
-    <button onclick="submit()">Check for pending request</button>
+    <button onclick="checkForPendingRequest()">Check for pending request</button>
   </div>
 
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <!-- Display the form data from localStorage here -->
+      <p>Child Name: <span id="childName"></span></p>
+      <p>Date of Birth: <span id="dateOfBirth"></span></p>
+      <p>Age: <span id="age"></span></p>
+      <p>Local Government: <span id="placeOfBirth"></span></p>
+      <p>NIN: <span id="nin"></span></p>
+      <p>Mother's Name: <span id="motherName"></span></p>
+      <p>Mother's State: <span id="motherState"></span></p>
+      <p>Mother's Local Government: <span id="motherLga"></span></p>
+      <p>Father's Name: <span id="fatherName"></span></p>
+      <p>Father's State: <span id="fatherState"></span></p>
+      <p>Father's Local Government: <span id="fatherLga"></span></p>
 
-  <script src="/registrar/dashboard.js"></script>
+      <!-- Buttons -->
+      <button onclick="closeModal()">Close</button>
+      <button onclick="issueAffidavitLetter()">Issue affidavit letter</button>
+    </div>
+  </div>
+
+  <script src="#"></script>
+
+  <script>
+    localStorage.setItem("letterIssue", "0");
+    function checkForPendingRequest() {
+      // Retrieve the form data from localStorage
+      const formData = JSON.parse(localStorage.getItem("formData"));
+
+      // Populate the modal with the data from localStorage
+      document.getElementById("childName").innerText = formData.childname;
+      document.getElementById("dateOfBirth").innerText = formData.dateofbirth;
+      document.getElementById("age").innerText = formData.age;
+      document.getElementById("placeOfBirth").innerText = formData.placeofbirth;
+      document.getElementById("nin").innerText = formData.nin;
+      document.getElementById("motherName").innerText = formData.mothername;
+      document.getElementById("motherState").innerText = formData.motherState;
+      document.getElementById("motherLga").innerText = formData.motherLga;
+      document.getElementById("fatherName").innerText = formData.fathername;
+      document.getElementById("fatherState").innerText = formData.fatherState;
+      document.getElementById("fatherLga").innerText = formData.fatherLga;
+
+      // Show the modal
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      // Close the modal
+      document.getElementById("modal").style.display = "none";
+    }
+    function issueAffidavitLetter() {
+    // Perform actions for issuing the affidavit letter
+    // This function can be implemented based on your requirements
+    console.log("Issuing affidavit letter...");
+    window.open("/certificate/affidavit/affidavit.html", "_blank");
+
+    // Set the "letter issue" local storage value to 1
+    localStorage.setItem("letterIssue", "1");
+  }
+  </script>
 </body>
 </html>
+

@@ -23,17 +23,34 @@ window.onclick = (event) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the value of "approve" from local storage
-  const approveValue = localStorage.getItem("approve");
+  const approveBirthCert = localStorage.getItem("approveBirthCert");
 
   // Check if the "approve" value is 1
-  if (approveValue === "1") {
+  if (approveBirthCert === "1") {
     // Update the h2 tag text
     document.getElementById("progressHeading").innerText =
-      "Congrats, Your application has been approved.";
+      "Congrats, Your Birth Certificate application has been approved.";
 
     // Enable the buttons
     document.getElementById("checkBirthCertBtn").disabled = false;
-    document.getElementById("checkDeathCertBtn").disabled = false;
+    // document.getElementById("checkDeathCertBtn").disabled = false;
+    // document.getElementById("checkAttestationBtn").disabled = false;
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the value of "approve" from local storage
+  const approveAttestion = localStorage.getItem("letterIssue");
+
+  // Check if the "approve" value is 1
+  if (approveAttestion === "1") {
+    // Update the h2 tag text
+    document.getElementById("progressHeading").innerText =
+      "Your Affidavit letter has been issued by the Registrar.";
+
+    // Enable the buttons
+    // document.getElementById("checkBirthCertBtn").disabled = false;
+    // document.getElementById("checkDeathCertBtn").disabled = false;
     document.getElementById("checkAttestationBtn").disabled = false;
   }
 });
