@@ -1,13 +1,12 @@
-let usersData = []; // Store the fetched users data
+let usersData = [];
 
 async function fetchBirthDetails() {
   try {
     const response = await fetch(
       "http://localhost:8080/api/v1/registrar/view-birth"
     );
-    usersData = await response.json(); // Store the fetched users data
+    usersData = await response.json();
 
-    // Call the function to populate the table with all users
     populateBirthTable(usersData);
     showPendingUsers();
   } catch (error) {
@@ -17,7 +16,7 @@ async function fetchBirthDetails() {
 
 function populateBirthTable(users) {
   const birthTable = document.getElementById("birthTable");
-  birthTable.innerHTML = ""; // Clear the table
+  birthTable.innerHTML = "";
 
   users.forEach((user) => {
     const row = document.createElement("tr");
@@ -66,9 +65,8 @@ async function approveBirth(nin) {
       }
     );
     const data = await response.json();
-    console.log(data); // Optional: Log the response data (Success message)
+    console.log(data);
 
-    // After approval, re-fetch the data and re-populate the table
     fetchBirthDetails();
   } catch (error) {
     console.error("Error approving birth:", error);
@@ -84,16 +82,13 @@ async function declineBirth(nin) {
       }
     );
     const data = await response.json();
-    console.log(data); // Optional: Log the response data (Success message)
-
-    // After decline, re-fetch the data and re-populate the table
+    console.log(data);
     fetchBirthDetails();
   } catch (error) {
     console.error("Error declining birth:", error);
   }
 }
 
-// Function to filter and show only users with "birthstatus" as "approved"
 function showApprovedUsers() {
   const approvedUsers = usersData.filter(
     (user) => user.birthstatus === "approved"
@@ -101,7 +96,6 @@ function showApprovedUsers() {
   populateBirthTable(approvedUsers);
 }
 
-// Function to filter and show only users with "birthstatus" as "declined"
 function showDeclinedUsers() {
   const declinedUsers = usersData.filter(
     (user) => user.birthstatus === "declined"
@@ -109,7 +103,6 @@ function showDeclinedUsers() {
   populateBirthTable(declinedUsers);
 }
 
-// Function to filter and show only users with "birthstatus" as "pending"
 function showPendingUsers() {
   const pendingUsers = usersData.filter(
     (user) => user.birthstatus === "pending"
@@ -117,7 +110,6 @@ function showPendingUsers() {
   populateBirthTable(pendingUsers);
 }
 
-// Add event listeners to the filter buttons
 document
   .getElementById("approved-btn")
   .addEventListener("click", showApprovedUsers);
@@ -128,5 +120,4 @@ document
   .getElementById("pending-btn")
   .addEventListener("click", showPendingUsers);
 
-// Call the function to fetch and populate data when the page loads
 document.addEventListener("DOMContentLoaded", fetchBirthDetails);
