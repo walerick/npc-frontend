@@ -12,30 +12,25 @@
   <div class="dropdown" style="float:right;">
     <button class="dropbtn">Filter Application</button>
     <div class="dropdown-content">
-        <button>Accept</button>
-        <button>Decline</button>
-        <button>Pending</button>
+        <button id="approved-btn">Approved</button>
+        <button id="declined-btn">Declined</button>
+        <button id="pending-btn">Pending</button>
     </div>
   </div>
-  <table class="birth-details" id="birthTable">
-    <tr>
-      <th>Nin</th>
-      <th>Name of Child</th>	
-      <th>Date of birth</th>
-      <th>Father's name</th>
-      <th>Mother's name</th>
-
-      <th>Actions</th>	
-
-    </tr>
-    <!-- <tr>
-      <td>#</td>	
-      <td>John Doe</td>
-      <td>
-        <button>Accept</button>
-        <button>Decline</button>
-      </td>
-    </tr> -->
+  <table class="birth-details">
+    <thead>
+      <tr>
+        <th>Nin</th>
+        <th>Name of Child</th>	
+        <th>Date of birth</th>
+        <th>Father's name</th>
+        <th>Mother's name</th>
+        <th>Actions</th>	
+      </tr>
+    </thead>
+    <tbody id="birthTable">
+      <!-- Table rows will be dynamically generated here -->
+    </tbody>
   </table>
 <script src="/staff/pending-request.js"></script>
 </body>
