@@ -9,48 +9,68 @@ spanElement.textContent = storedName;
 
 const trackProgressBtn = document.getElementById("trackProgressBtn");
 const trackProgressModal = document.getElementById("trackProgressModal");
+const checkBirthCertBtn = document.getElementById("checkBirthCertBtn");
+const checkDeathCertBtn = document.getElementById("checkDeathCertBtn");
+const checkAttestationBtn = document.getElementById("checkAttestationBtn");
 
-trackProgressBtn.addEventListener("click", () => {
+trackProgressBtn.addEventListener("click", async () => {
   trackProgressModal.style.display = "block";
-});
 
-// Close the modal when the user clicks outside of it
-window.onclick = (event) => {
-  if (event.target === trackProgressModal) {
-    trackProgressModal.style.display = "none";
+  try {
+    // Fetch the user data using the stored nin from localStorage
+    const nin = localStorage.getItem("nin");
+    const response = await fetch(
+      `http://localhost:8080/api/v1/user/get-by-nin/${nin}`
+    );
+    const user = await response.json();
+
+    // Check if the user data contains the necessary fields for each certificate type
+    if (user.birthstatus === "approved") {
+      checkBirthCertBtn.disabled = false;
+      checkBirthCertBtn.addEventListener("click", () => {
+        window.location.href = "/certificate/birthcertificate.html";
+      });
+    } else {
+      checkBirthCertBtn.disabled = true;
+    }
+
+    if (user.deathstatus === "approved") {
+      checkDeathCertBtn.disabled = false;
+    } else {
+      checkDeathCertBtn.disabled = true;
+    }
+
+    if (user.attestationstatus === "approved") {
+      checkAttestationBtn.disabled = false;
+    } else {
+      checkAttestationBtn.disabled = true;
+    }
+
+    if (user.birthstatus === "approved") {
+      checkBirthCertBtn.disabled = false;
+    } else {
+      checkBirthCertBtn.disabled = true;
+    }
+
+    if (user.deathstatus === "approved") {
+      checkDeathCertBtn.disabled = false;
+    } else {
+      checkDeathCertBtn.disabled = true;
+    }
+
+    if (user.attestationstatus === "approved") {
+      checkAttestationBtn.disabled = false;
+    } else {
+      checkAttestationBtn.disabled = true;
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error);
   }
-};
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the value of "approve" from local storage
-  const approveBirthCert = localStorage.getItem("approveBirthCert");
-
-  // Check if the "approve" value is 1
-  if (approveBirthCert === "1") {
-    // Update the h2 tag text
-    document.getElementById("progressHeading").innerText =
-      "Congrats, Your Birth Certificate application has been approved.";
-
-    // Enable the buttons
-    document.getElementById("checkBirthCertBtn").disabled = false;
-    // document.getElementById("checkDeathCertBtn").disabled = false;
-    // document.getElementById("checkAttestationBtn").disabled = false;
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the value of "approve" from local storage
-  const approveAttestion = localStorage.getItem("letterIssue");
-
-  // Check if the "approve" value is 1
-  if (approveAttestion === "1") {
-    // Update the h2 tag text
-    document.getElementById("progressHeading").innerText =
-      "Your Affidavit letter has been issued by the Registrar.";
-
-    // Enable the buttons
-    // document.getElementById("checkBirthCertBtn").disabled = false;
-    // document.getElementById("checkDeathCertBtn").disabled = false;
-    document.getElementById("checkAttestationBtn").disabled = false;
-  }
+  // Close the modal when clicking anywhere outside of it
+  window.onclick = (event) => {
+    if (event.target === trackProgressModal) {
+      trackProgressModal.style.display = "none";
+    }
+  };
 });

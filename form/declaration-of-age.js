@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Save the `attest_id` in localStorage
         const attestId = data.attestid;
         localStorage.setItem("attestId", attestId);
+        window.location.href = "/dashboard.html";
+
         // You can perform further actions or show success messages here
       })
       .catch((error) => {
