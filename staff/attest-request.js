@@ -3,7 +3,7 @@ let usersData = [];
 async function fetchAttestDetails() {
   try {
     const response = await fetch(
-      "http://localhost:8080/api/v1/externalRegistrar/view-attestation"
+      "http://localhost:8080/api/v1/registrar/view-attest"
     );
     usersData = await response.json();
 
@@ -59,7 +59,7 @@ function populateAttestTable(users) {
 async function approveAttest(nin) {
   try {
     const response = await fetch(
-      `http://localhost:8080/api/v1/externalRegistrar/view-attestation/approve/${nin}`,
+      `http://localhost:8080/api/v1/registrar/view-attest/approve/${nin}`,
       {
         method: "PUT",
       }
@@ -76,7 +76,7 @@ async function approveAttest(nin) {
 async function declineAttest(nin) {
   try {
     const response = await fetch(
-      `http://localhost:8080/api/v1/externalRegistrar/view-attestation/decline/${nin}`,
+      `http://localhost:8080/api/v1/registrar/view-attest/decline/${nin}`,
       {
         method: "PUT",
       }
@@ -91,21 +91,21 @@ async function declineAttest(nin) {
 
 function showApprovedUsers() {
   const approvedUsers = usersData.filter(
-    (user) => user.attestationstatus === "approved"
+    (user) => user.attestbystaffstatus === "approved"
   );
   populateAttestTable(approvedUsers);
 }
 
 function showDeclinedUsers() {
   const declinedUsers = usersData.filter(
-    (user) => user.attestationstatus === "declined"
+    (user) => user.attestbystaffstatus === "declined"
   );
   populateAttestTable(declinedUsers);
 }
 
 function showPendingUsers() {
   const pendingUsers = usersData.filter(
-    (user) => user.attestationstatus === "pending"
+    (user) => user.attestbystaffstatus === "pending"
   );
   populateAttestTable(pendingUsers);
 }

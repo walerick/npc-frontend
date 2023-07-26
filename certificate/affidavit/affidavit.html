@@ -7,24 +7,26 @@
     <link rel="stylesheet" href="/certificate/affidavit/affidavit.css">
 </head>
 <body>
+    <button class="proceed-reg">Apply for Attestation</button>
+
     <div class="affidavit-content">
-        <h2>IN THE HIGH COURT OF JUSTICE</h2>
-        <h2>OSUN STATE OF NIGERIA</h2>
-        <h2>IN THE OSOGBO JUDICIAL DIVISION</h2>
-        <h2>HOLDEN AT OSOGBO</h2>
+        <h3>IN THE HIGH COURT OF JUSTICE</h3>
+        <h3>OSUN STATE OF NIGERIA</h3>
+        <h3>IN THE OSOGBO JUDICIAL DIVISION</h3>
+        <h3>HOLDEN AT OSOGBO</h3>
         <br>
-        <h2>STATUTORY DECLARATION OF AGE</h2>
+        <h3>STATUTORY DECLARATION OF AGE</h3>
         <h3 class="rightId" style="text-align: right;">Issue Id: #<span class="attest-id">spo</span>  </h3>
 
         <div class="letter-body">
             <p>
-                I, <span class="attest-name">JOHN DOE MILL</span> , in <span class="fatherlga">Osogbo</span> Local Government Area of Osun State of Nigeria, a true citizen of the Federal Republic of Nigeria, currently residing in <span class="placeofbirth"> address XYZ</span>, do hereby depose an oath and state as follows:
+                I, <span class="attest-namex">JOHN DOE MILL</span> , in <span class="fatherlga">Osogbo</span> Local Government Area of Osun State of Nigeria, a true citizen of the Federal Republic of Nigeria, currently residing in <span class="placeofbirth"> address XYZ</span>, do hereby depose an oath and state as follows:
             </p>
             <p>
                 1. That I am the deponent on record. <br>
             </p>
             <p>
-                2. That my name is <span class="attest-name">JOHN DOE MILL</span> <br>
+                2. That my name is <span class="attest-name">JOHN DOE MILL</span>. <br>
             </p>
             <p>
                 3.That I was born on the <span class="attest-date">22-05-2023</span> at <span class="lga">Osogbo</span> Local Government , in <span class="state">Osun state</span> of Nigeria.<br>
@@ -43,9 +45,8 @@
             </p>
         </div>
 
-        <div class="signature">
+        <div class="signature" style="text-align: right;">
             <p>Signed by Registrar</p>
-            <p>Date: [Date]</p>
         </div>
 
         <div class="affidavit-section">
@@ -84,6 +85,8 @@
             // Update the HTML elements with the fetched data
             document.querySelector('.attest-id').textContent = data.attestId;
             document.querySelector('.attest-name').textContent = data.attestName;
+            document.querySelector('.attest-namex').textContent = data.attestName;
+
             document.querySelector('.fatherlga').textContent = data.attestLg;
             document.querySelector('.placeofbirth').textContent = data.attestPlaceOfBirth;
             

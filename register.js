@@ -36,6 +36,12 @@ document
     })
       .then((response) => {
         // Handle the response from the backend
+        if (!response.ok) {
+          return response.json().then((data) => {
+            // Handle the error message from the backend
+            errorElement.textContent = data; // Assuming the error message is a simple string
+          });
+        }
         window.location.href = "/index.html";
       })
       .catch((error) => {

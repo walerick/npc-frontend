@@ -12,19 +12,20 @@
   <nav class="nav">
     <ul>
       <li><a href="/index.html">Home</a></li>
-      <li><a href="#">About</a></li>
       <li class="service">
         <a href="#">Service</a>
         <ul class="service-dropdown">
           <li><a href="/form/birthcertregform.html">Birth Certificate Registration</a></li>
           <li><a href="/form/deathcertregform.html">Death Certificate Registration</a></li>
-          <li class="nav-attestation">
-            Request for Birth Attestation
-            <ul class="attestation-dropdown">
-              <li><a href="/form/declaration-of-age.html">Declaration of Age form</a></li>
-              <li><a href="/certificate/affidavit/affidavit.html">View Affidavit letter</a></li>
-            </ul>
-          </li>
+        </ul>
+      </li>
+      <li class="nav-attestation">
+        Apply to Registrar
+        <ul class="attestation-dropdown">
+          <li><a href="#">Declaration of Name form</a></li>
+          <li><a href="/form/declaration-of-age.html">Declaration of Age form</a></li>
+          <li><a href="#">Declaration of LGA form</a></li>
+          <li><a href="#">Declaration of Name form</a></li>
         </ul>
       </li>
       <li><a href="#">Contact</a></li>
@@ -46,9 +47,9 @@
   </footer>
   <div class="modal" id="trackProgressModal">
     <div class="modal-content">
-      <h2 id="progressHeading">Kindly wait while your application is being verified by the Registrar</h2>
+      <h2 id="progressHeading">Once your application is approved, the buttons will change to green.</h2>
       <button class="check" id="checkBirthCertBtn" disabled>Check Birth Certificate</button> <br>
-      <button class="check" id="checkDeathCertBtn" disabled>Check Death Certificate</button> <br>
+      <button class="check" id="checkDeathCertBtn" disabled>Check Age Attestation</button> <br>
       <button class="check" id="checkAttestationBtn" disabled>View Affidavit Letter</button>
     </div>
   </div>

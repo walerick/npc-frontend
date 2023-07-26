@@ -37,7 +37,7 @@ a{
   
   .nav li {
     display: inline-block;
-    margin-right: 10rem;
+    margin-right: 9rem;
   }
 
   
@@ -45,22 +45,17 @@ a{
     color: #000;
   }
 
-  .nav .service {
+  .nav .service , .nav .nav-attestation{
     position: relative;
     /* display: inline-block; */
   }
-  .nav .service .service-dropdown, .nav .service .service-dropdown .attestation-dropdown{
+  .nav .service .service-dropdown, .nav .nav-attestation .attestation-dropdown{
     position: absolute;
     z-index: +4;
     scale: 0;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  }
-  .nav .service .service-dropdown .attestation-dropdown{
-    position: absolute;
-    scale: 0;
-    left: 50%;
   }
 
   .nav .service:hover .service-dropdown{
@@ -72,7 +67,7 @@ a{
     scale : 1;
   }
 
-  .service-dropdown li {
+  .service-dropdown li , .attestation-dropdown li{
     font-size: 15px;
     /* margin: 1rem 5px; */
     margin-left: 10px;

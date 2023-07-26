@@ -34,14 +34,20 @@ trackProgressBtn.addEventListener("click", async () => {
       checkBirthCertBtn.disabled = true;
     }
 
-    if (user.deathstatus === "approved") {
+    if (user.attestbystaffstatus === "approved") {
       checkDeathCertBtn.disabled = false;
+      checkDeathCertBtn.addEventListener("click", () => {
+        window.location.href = "/certificate/age-attestation.html";
+      });
     } else {
       checkDeathCertBtn.disabled = true;
     }
 
     if (user.attestationstatus === "approved") {
       checkAttestationBtn.disabled = false;
+      checkAttestationBtn.addEventListener("click", () => {
+        window.location.href = "/certificate/affidavit/affidavit.html";
+      });
     } else {
       checkAttestationBtn.disabled = true;
     }
@@ -52,7 +58,7 @@ trackProgressBtn.addEventListener("click", async () => {
       checkBirthCertBtn.disabled = true;
     }
 
-    if (user.deathstatus === "approved") {
+    if (user.attestbystaffstatus === "approved") {
       checkDeathCertBtn.disabled = false;
     } else {
       checkDeathCertBtn.disabled = true;

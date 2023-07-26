@@ -76,10 +76,10 @@ th, td {
     padding: 5px;
     text-align: left;
 }
-.birth-details tr:nth-child(even) {
+.attest-details tr:nth-child(even) {
     background-color: #eee;
 }
-.birth-details tr:nth-child(odd) {
+.attest-details tr:nth-child(odd) {
    background-color:#fff;
 }
 .birth-details th	{

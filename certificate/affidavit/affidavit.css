@@ -6,7 +6,31 @@ body {
     /* border: 1px solid red; */
 }
 
-h2 {
+    
+/* Button */
+button{
+    background-color: #4dac76;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    
+button:hover {
+background-color: #26973b;
+}
+
+.proceed-reg{
+    position: fixed;
+    top: 4rem;
+    right: 2rem;
+}
+
+
+h3 {
     text-align: center;
     text-decoration: underline;
 }
@@ -20,7 +44,10 @@ span{
 }
 
 .affidavit-content {
-    max-width: 800px;
+    max-width: 700px;
+    background-color:rgb(247, 244, 241);
+    padding: 10px;
+    /* border: 1px solid red; */
     margin: 0 auto;
 }
 
