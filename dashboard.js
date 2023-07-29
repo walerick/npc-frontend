@@ -73,7 +73,6 @@ trackProgressBtn.addEventListener("click", async () => {
     console.error("Error fetching user data:", error);
   }
 
-  // Close the modal when clicking anywhere outside of it
   window.onclick = (event) => {
     if (event.target === trackProgressModal) {
       trackProgressModal.style.display = "none";

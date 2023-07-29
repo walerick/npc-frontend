@@ -31,22 +31,12 @@ function displayBirthDetails() {
             </div>
             <div class="row">
               <div class="column">
-                <h3>Place of Birth:</h3>
-                <p>${data.placeofbirth}</p>
-              </div>
+                <h3>Age:</h3>
+                <p>${data.attestage}</p>
+              </div>            
               <div class="column">
-                <h3>Gender:</h3>
-                <p>${data.gender}</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <h3>Father's Name:</h3>
-                <p>${data.fathername}</p>
-              </div>
-              <div class="column">
-                <h3>Mother's Name:</h3>
-                <p>${data.mothername}</p>
+                <h3>Local Govt Area:</h3>
+                <p>${data.attestlg}</p>
               </div>
             </div>
           `;

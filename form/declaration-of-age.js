@@ -82,10 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Step 4: Create the AttestationRequest object
     const attestRequest = {
-      attest_name: childname,
-      attest_date: dateofbirth,
-      attest_age: age,
-      attest_lg: placeofbirth,
+      attestname: childname,
+      attestdate: dateofbirth,
+      attestage: age,
+      attestlg: placeofbirth,
     };
 
     // Step 2: Extract data from the form
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("formData", JSON.stringify(formData));
 
     // Step 5: Make the API request to update attest details
-    fetch(`http://localhost:8080/api/v1/attest/${nin}`, {
+    fetch(`http://localhost:8080/api/v1/user/attest/${nin}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
