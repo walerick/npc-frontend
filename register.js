@@ -1,21 +1,18 @@
 document
   .querySelector(".register-form")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
 
     var form = event.target;
-    var nameInput = form.elements.name;
     var passwordInput = form.elements.password;
     var confirmPasswordInput = form.elements["confirm-password"];
-    var ninInput = form.elements.nin;
-
+    var errorElement = document.getElementById("error-message");
     // Validate password
     var password = passwordInput.value;
     var confirmPassword = confirmPasswordInput.value;
 
     if (password !== confirmPassword) {
       // alert("Passwords do not match.");
-      var errorElement = document.getElementById("error-message");
       errorElement.textContent = "Passwords do not match.";
       return;
     }
@@ -36,13 +33,11 @@ document
     })
       .then((response) => {
         // Handle the response from the backend
-        if (!response.ok) {
-          return response.json().then((data) => {
-            // Handle the error message from the backend
-            errorElement.textContent = data; // Assuming the error message is a simple string
-          });
+        if (response.ok) {
+          window.location.href = "/index.html";
         }
-        window.location.href = "/index.html";
+        // Handle the error message from the backend
+        errorElement.textContent = "Nin Already used to Create account.";
       })
       .catch((error) => {
         // Handle any errors

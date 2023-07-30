@@ -23,16 +23,16 @@ function populateBirthTable(users) {
     const ninCell = document.createElement("td");
     ninCell.textContent = user.nin;
     const nameCell = document.createElement("td");
-    nameCell.textContent = user.childname;
+    nameCell.textContent = user.childName;
 
     const birthdateCell = document.createElement("td");
-    birthdateCell.textContent = user.birthdate;
+    birthdateCell.textContent = user.birthDate;
 
     const fatherNameCell = document.createElement("td");
-    fatherNameCell.textContent = user.fathername;
+    fatherNameCell.textContent = user.fatherName;
 
     const motherNameCell = document.createElement("td");
-    motherNameCell.textContent = user.mothername;
+    motherNameCell.textContent = user.motherName;
 
     const actionsCell = document.createElement("td");
     const acceptButton = document.createElement("button");
@@ -91,21 +91,21 @@ async function declineBirth(nin) {
 
 function showApprovedUsers() {
   const approvedUsers = usersData.filter(
-    (user) => user.birthstatus === "approved"
+    (user) => user.birthStatus === "approved"
   );
   populateBirthTable(approvedUsers);
 }
 
 function showDeclinedUsers() {
   const declinedUsers = usersData.filter(
-    (user) => user.birthstatus === "declined"
+    (user) => user.birthStatus === "declined"
   );
   populateBirthTable(declinedUsers);
 }
 
 function showPendingUsers() {
   const pendingUsers = usersData.filter(
-    (user) => user.birthstatus === "pending"
+    (user) => user.birthStatus === "pending"
   );
   populateBirthTable(pendingUsers);
 }

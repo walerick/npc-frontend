@@ -94,7 +94,7 @@
             const formattedDate = formatDateToDMY(data.attestDate);
             document.querySelector('.attest-date').textContent = formattedDate;
             
-            document.querySelector('.lga').textContent = data.attestLGA;
+            document.querySelector('.lga').textContent = data.attestLg;
             document.querySelector('.state').textContent = data.attestState;
           } catch (error) {
             console.error('Error fetching data:', error);

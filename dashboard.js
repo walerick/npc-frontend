@@ -1,10 +1,5 @@
-// Retrieve the name from localStorage
 var storedName = localStorage.getItem("name");
-
-// Find the <span> element by its tag name
 var spanElement = document.querySelector("span");
-
-// Update the content of the <span> element with the stored name
 spanElement.textContent = storedName;
 
 const trackProgressBtn = document.getElementById("trackProgressBtn");
@@ -24,8 +19,8 @@ trackProgressBtn.addEventListener("click", async () => {
     );
     const user = await response.json();
 
-    // Check if the user data contains the necessary fields for each certificate type
-    if (user.birthstatus === "approved") {
+    // CHECK IF STATUS IS APPROVED
+    if (user.birthStatus === "approved") {
       checkBirthCertBtn.disabled = false;
       checkBirthCertBtn.addEventListener("click", () => {
         window.location.href = "/certificate/birthcertificate.html";
@@ -34,7 +29,7 @@ trackProgressBtn.addEventListener("click", async () => {
       checkBirthCertBtn.disabled = true;
     }
 
-    if (user.attestbystaffstatus === "approved") {
+    if (user.attestByStaffStatus === "approved") {
       checkDeathCertBtn.disabled = false;
       checkDeathCertBtn.addEventListener("click", () => {
         window.location.href = "/certificate/age-attestation.html";
@@ -43,7 +38,7 @@ trackProgressBtn.addEventListener("click", async () => {
       checkDeathCertBtn.disabled = true;
     }
 
-    if (user.attestationstatus === "approved") {
+    if (user.attestationStatus === "approved") {
       checkAttestationBtn.disabled = false;
       checkAttestationBtn.addEventListener("click", () => {
         window.location.href = "/certificate/affidavit/affidavit.html";
@@ -52,19 +47,19 @@ trackProgressBtn.addEventListener("click", async () => {
       checkAttestationBtn.disabled = true;
     }
 
-    if (user.birthstatus === "approved") {
+    if (user.birthStatus === "approved") {
       checkBirthCertBtn.disabled = false;
     } else {
       checkBirthCertBtn.disabled = true;
     }
 
-    if (user.attestbystaffstatus === "approved") {
+    if (user.attestByStaffStatus === "approved") {
       checkDeathCertBtn.disabled = false;
     } else {
       checkDeathCertBtn.disabled = true;
     }
 
-    if (user.attestationstatus === "approved") {
+    if (user.attestationStatus === "approved") {
       checkAttestationBtn.disabled = false;
     } else {
       checkAttestationBtn.disabled = true;
@@ -72,7 +67,7 @@ trackProgressBtn.addEventListener("click", async () => {
   } catch (error) {
     console.error("Error fetching user data:", error);
   }
-
+  // OPT OUT OF MODAL CONTENT
   window.onclick = (event) => {
     if (event.target === trackProgressModal) {
       trackProgressModal.style.display = "none";

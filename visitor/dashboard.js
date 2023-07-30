@@ -3,7 +3,7 @@ function searchBirthCertificate() {
   const birthid = document.getElementById("birthidInput").value;
 
   // Make an AJAX request to the /birth-by-id endpoint
-  fetch(`http://localhost:8080/api/v1/user/birth-by-id?birthid=${birthid}`)
+  fetch(`http://localhost:8080/api/v1/user/birth-by-id?birthId=${birthid}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Birth certificate not found.");
@@ -16,21 +16,21 @@ function searchBirthCertificate() {
       const certificateDetails = document.getElementById("certificateDetails");
 
       certificateDetails.innerHTML = `
-          <h2>Registration Number: <span>#${data.birthid}</span></h2>
+          <h2>Registration Number: <span>#${data.birthId}</span></h2>
           <div class="row">
             <div class="column">
               <h3>Name:</h3>
-              <p>${data.childname}</p>
+              <p>${data.childName}</p>
             </div>
             <div class="column">
               <h3>Date of Birth:</h3>
-              <p>${data.birthdate}</p>
+              <p>${data.birthDate}</p>
             </div>
           </div>
           <div class="row">
             <div class="column">
               <h3>Place of Birth:</h3>
-              <p>${data.placeofbirth}</p>
+              <p>${data.placeOfBirth}</p>
             </div>
             <div class="column">
               <h3>Gender:</h3>
@@ -40,11 +40,11 @@ function searchBirthCertificate() {
           <div class="row">
             <div class="column">
               <h3>Father's Name:</h3>
-              <p>${data.fathername}</p>
+              <p>${data.fatherName}</p>
             </div>
             <div class="column">
               <h3>Mother's Name:</h3>
-              <p>${data.mothername}</p>
+              <p>${data.motherName}</p>
             </div>
           </div>
         `;

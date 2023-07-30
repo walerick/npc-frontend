@@ -18,25 +18,25 @@ function displayBirthDetails() {
     .then((data) => {
       const certificateDetails = document.getElementById("certificateDetails");
       certificateDetails.innerHTML = `
-            <h2>Registration Number: <span>#${data.attestid}</span></h2>
+            <h2>Registration Number: <span>#${data.attestId}</span></h2>
             <div class="row">
               <div class="column">
                 <h3>Name:</h3>
-                <p>${data.attestname}</p>
+                <p>${data.attestName}</p>
               </div>
               <div class="column">
                 <h3>Date of Birth:</h3>
-                <p>${data.attestdate}</p>
+                <p>${data.attestDate}</p>
               </div>
             </div>
             <div class="row">
               <div class="column">
                 <h3>Age:</h3>
-                <p>${data.attestage}</p>
+                <p>${data.attestAge}</p>
               </div>            
               <div class="column">
                 <h3>Local Govt Area:</h3>
-                <p>${data.attestlg}</p>
+                <p>${data.attestLg}</p>
               </div>
             </div>
           `;

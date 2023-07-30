@@ -24,15 +24,15 @@ function populateAttestTable(users) {
     ninCell.textContent = user.nin;
 
     const idCell = document.createElement("td");
-    idCell.textContent = user.attestid;
+    idCell.textContent = user.attestId;
     const nameCell = document.createElement("td");
-    nameCell.textContent = user.attestname;
+    nameCell.textContent = user.attestName;
 
     const dateCell = document.createElement("td");
-    dateCell.textContent = user.attestdate;
+    dateCell.textContent = user.attestDate;
 
     const placeCell = document.createElement("td");
-    placeCell.textContent = user.attestlg;
+    placeCell.textContent = user.attestLg;
 
     const actionsCell = document.createElement("td");
     const acceptButton = document.createElement("button");
@@ -91,21 +91,21 @@ async function declineAttest(nin) {
 
 function showApprovedUsers() {
   const approvedUsers = usersData.filter(
-    (user) => user.attestbystaffstatus === "approved"
+    (user) => user.attestByStaffStatus === "approved"
   );
   populateAttestTable(approvedUsers);
 }
 
 function showDeclinedUsers() {
   const declinedUsers = usersData.filter(
-    (user) => user.attestbystaffstatus === "declined"
+    (user) => user.attestByStaffStatus === "declined"
   );
   populateAttestTable(declinedUsers);
 }
 
 function showPendingUsers() {
   const pendingUsers = usersData.filter(
-    (user) => user.attestbystaffstatus === "pending"
+    (user) => user.attestByStaffStatus === "pending"
   );
   populateAttestTable(pendingUsers);
 }

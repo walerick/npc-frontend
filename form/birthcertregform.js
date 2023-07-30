@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Create an object to send the birth details
     const birthDetails = {
-      childname: formData.get("childname"),
-      birthdate: formData.get("dateofbirth"),
+      childName: formData.get("childname"),
+      birthDate: formData.get("dateofbirth"),
       gender: formData.get("gender"),
-      placeofbirth: formData.get("placeofbirth"),
-      fathername: formData.get("fathername"),
-      mothername: formData.get("mothername"),
+      placeOfBirth: formData.get("placeofbirth"),
+      fatherName: formData.get("fathername"),
+      motherName: formData.get("mothername"),
       lga: formData.get("lga"),
     };
 
@@ -112,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Handle the response data if needed
         console.log("Birth details updated:", data);
         alert("Your application has been successfully submitted.");
-        // You can display a success message or redirect to another page here
         window.location.href = "/dashboard.html";
       })
       .catch((error) => {

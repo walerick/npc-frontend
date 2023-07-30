@@ -31,8 +31,6 @@ document
         localStorage.setItem("name", data.name);
         localStorage.setItem("birth_id", data.birth);
 
-        // Perform further actions with the user's credentials
-        // For example, redirect to the dashboard
         window.location.href = "/dashboard.html";
       })
       .catch((error) => {

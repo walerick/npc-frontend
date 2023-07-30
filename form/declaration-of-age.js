@@ -57,12 +57,6 @@ document
 document
   .getElementsByClassName("previous")[1]
   .addEventListener("click", goToPreviousStep);
-// document
-//   .getElementsByClassName("next")[2]
-//   .addEventListener("click", goToNextStep);
-// document
-//   .getElementsByClassName("previous")[2]
-//   .addEventListener("click", goToPreviousStep);
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("attestationForm");
@@ -82,10 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Step 4: Create the AttestationRequest object
     const attestRequest = {
-      attestname: childname,
-      attestdate: dateofbirth,
-      attestage: age,
-      attestlg: placeofbirth,
+      attestName: childname,
+      attestDate: dateofbirth,
+      attestAge: age,
+      attestLg: placeofbirth,
     };
 
     // Step 2: Extract data from the form
@@ -127,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Step 6: Handle the response data if necessary
         console.log("Updated User Data:", data);
         // Save the `attest_id` in localStorage
-        const attestId = data.attestid;
+        const attestId = data.attestId;
         localStorage.setItem("attestId", attestId);
         window.location.href = "/dashboard.html";
 
