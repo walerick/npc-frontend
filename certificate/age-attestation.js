@@ -30,10 +30,10 @@ function displayBirthDetails() {
               </div>
             </div>
             <div class="row">
-              <div class="column">
-                <h3>Age:</h3>
-                <p>${data.attestAge}</p>
-              </div>            
+              // <div class="column">
+              //   <h3>Age:</h3>
+              //   <p>${data.attestAge}</p>
+              // </div>            
               <div class="column">
                 <h3>Local Govt Area:</h3>
                 <p>${data.attestLg}</p>
