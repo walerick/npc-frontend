@@ -7,6 +7,7 @@ const trackProgressModal = document.getElementById("trackProgressModal");
 const checkBirthCertBtn = document.getElementById("checkBirthCertBtn");
 const checkDeathCertBtn = document.getElementById("checkDeathCertBtn");
 const checkAttestationBtn = document.getElementById("checkAttestationBtn");
+const checkDeceasedCertBtn = document.getElementById("checkDeceasedCertBtn");
 
 trackProgressBtn.addEventListener("click", async () => {
   trackProgressModal.style.display = "block";
@@ -27,6 +28,15 @@ trackProgressBtn.addEventListener("click", async () => {
       });
     } else {
       checkBirthCertBtn.disabled = true;
+    }
+
+    if (user.deathStatus === "approved") {
+      checkDeceasedCertBtn.disabled = false;
+      checkDeceasedCertBtn.addEventListener("click", () => {
+        window.location.href = "/certificate/deceasedcertificate.html";
+      });
+    } else {
+      checkDeceasedCertBtn.disabled = true;
     }
 
     if (user.attestByStaffStatus === "approved") {
@@ -51,6 +61,12 @@ trackProgressBtn.addEventListener("click", async () => {
       checkBirthCertBtn.disabled = false;
     } else {
       checkBirthCertBtn.disabled = true;
+    }
+
+    if (user.deathStatus === "approved") {
+      checkDeceasedCertBtn.disabled = false;
+    } else {
+      checkDeceasedCertBtn.disabled = true;
     }
 
     if (user.attestByStaffStatus === "approved") {

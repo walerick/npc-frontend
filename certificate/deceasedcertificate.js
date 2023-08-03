@@ -8,7 +8,7 @@ function displayBirthDetails() {
   const nin = getNINFromLocalStorage();
 
   // Make the request to get the birth details
-  fetch(`http://localhost:8080/api/v1/user/attest-details?nin=${nin}`)
+  fetch(`http://localhost:8080/api/v1/user/death-details?nin=${nin}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Error fetching birth details");
@@ -18,25 +18,35 @@ function displayBirthDetails() {
     .then((data) => {
       const certificateDetails = document.getElementById("certificateDetails");
       certificateDetails.innerHTML = `
-            <h2>Registration Number: <span>#${data.attestId}</span></h2>
+            <h2>Registration Number: <span>#${data.deathId}</span></h2>
             <div class="row">
               <div class="column">
                 <h3>Name:</h3>
-                <p>${data.attestName}</p>
+                <p>${data.deathName}</p>
               </div>
               <div class="column">
                 <h3>Date of Birth:</h3>
-                <p>${data.attestDate}</p>
+                <p>${data.dateAtDeath}</p>
               </div>
             </div>
             <div class="row">
               <div class="column">
-                <h3>Age:</h3>
-                <p>${data.attestAge}</p>
-              </div>            
+                <h3>Place of Birth:</h3>
+                <p>${data.placeOfDeath}</p>
+              </div>
               <div class="column">
-                <h3>Local Govt Area:</h3>
-                <p>${data.attestLg}</p>
+                <h3>Gender:</h3>
+                <p>${data.deathGender}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <h3>Father's Name:</h3>
+                <p>${data.fatherName}</p>
+              </div>
+              <div class="column">
+                <h3>Mother's Name:</h3>
+                <p>${data.motherName}</p>
               </div>
             </div>
           `;

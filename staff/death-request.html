@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>National Population Commission</title>
+  <link rel="stylesheet" href="/staff/pending-request.css">
+  <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon" style="border-radius: 100%;">
+</head>
+<body>
+  <header class="header">
+    <img src="https://nationalpopulation.gov.ng/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoG-250x45%402x.ca0a4aae.png&w=828&q=75" alt="">
+  </header>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn">Filter Application</button>
+    <div class="dropdown-content">
+        <button id="approved-btn">Approved</button>
+        <button id="declined-btn">Declined</button>
+        <button id="pending-btn">Pending</button>
+    </div>
+  </div>
+  <table class="death-details">
+    <thead>
+      <tr>
+        <th>Nin</th>
+        <th>Name of Deceased</th>	
+        <th>Gender</th>
+        <th>Date of death</th>
+        <th>Place of Death</th>
+        <th>Actions</th>	
+      </tr>
+    </thead>
+    <tbody id="deathTable">
+      <!-- Table rows will be dynamically generated here -->
+    </tbody>
+  </table>
+<script src="/staff/death-request.js"></script>
+</body>
+</html>
