@@ -24,7 +24,7 @@ function displayBirthDetails() {
           <div class="row">
             <div class="column">
               <h3>Name:</h3>
-              <p>${data.childName.toUpperCase()}</p>
+              <p>${data.childName}</p>
             </div>
             <div class="column">
               <h3>Date of Birth:</h3>
@@ -34,29 +34,29 @@ function displayBirthDetails() {
           <div class="row">
             <div class="column">
               <h3>Place of Birth:</h3>
-              <p>${data.placeOfBirth.toUpperCase()}</p>
+              <p>${data.placeOfBirth}</p>
             </div>
             <div class="column">
               <h3>Gender:</h3>
-              <p>${data.gender.toUpperCase()}</p>
+              <p>${data.gender}</p>
             </div>
           </div>
 
           <div class="row">
             <div class="column">
               <h3>Father's Name:</h3>
-              <p>${data.fatherName.toUpperCase()}</p>
+              <p>${data.fatherName}</p>
             </div>
             <div class="column">
               <h3>Mother's Name:</h3>
-              <p>${data.motherName.toUpperCase()}</p>
+              <p>${data.motherName}</p>
             </div>
           </div>          
 
           <div class="row">
             <div class="column">
               <h3>State Of Origin:</h3>
-              <p>${data.stateOfOrigin.toUpperCase()}</p>
+              <p>${data.stateOfOrigin}</p>
             </div>
           </div>
 
@@ -68,7 +68,7 @@ function displayBirthDetails() {
             <div class="column">
               <br>
               <h3>Signed by:</h3>
-              <p>${staffName.toLocaleUpperCase()}</p>
+              <p>${staffName}</p>
             </div>
           </div
         `;
