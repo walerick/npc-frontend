@@ -3,6 +3,8 @@ function getNINFromLocalStorage() {
   return localStorage.getItem("nin");
 }
 
+const staffName = localStorage.getItem("staffName");
+
 // Function to fetch and display birth details
 function displayBirthDetails() {
   const nin = getNINFromLocalStorage();
@@ -22,23 +24,37 @@ function displayBirthDetails() {
             <div class="row">
               <div class="column">
                 <h3>Name:</h3>
-                <p>${data.attestName}</p>
+                <p>${data.attestName.toUpperCase()}</p>
               </div>
               <div class="column">
                 <h3>Date of Birth:</h3>
                 <p>${data.attestDate}</p>
               </div>
             </div>
-            <div class="row">
-              // <div class="column">
-              //   <h3>Age:</h3>
-              //   <p>${data.attestAge}</p>
-              // </div>            
+            <div class="row">           
               <div class="column">
                 <h3>Local Govt Area:</h3>
-                <p>${data.attestLg}</p>
+                <p>${data.attestLg.toUpperCase()}</p>
+              </div>
+              <div class="column">
+                <h3>State Of Origin:</h3>
+                <p>${data.stateOfOrigin.toUpperCase()}</p>     
               </div>
             </div>
+
+            <div class="row">
+              <div class="column">
+                <br>
+                <h3></h3>
+                <p></p>
+              </div>
+              <div class="column">
+                <br>
+                <h3>Signed by:</h3>
+                <p>${staffName.toLocaleUpperCase()}</p>
+              </div>
+            </div>  
+
           `;
     })
     .catch((error) => {

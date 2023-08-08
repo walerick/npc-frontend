@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
   }
   
   .certificate {
@@ -33,16 +33,21 @@ body {
   
   h3 {
     margin-top: 0;
+    font-weight: normal;
   }
   
   .certificate-details {
     margin-top: 20px;
   }
+
+  .certificate-details p{
+    font-weight: 900;
+  }
   
   .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   
   .column {

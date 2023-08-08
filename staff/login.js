@@ -26,8 +26,7 @@ document
         }
       })
       .then((data) => {
-        // Perform further actions with the user's credentials
-        // For example, redirect to the dashboard
+        localStorage.setItem("staffName", data.username);
         window.location.href = "/staff/dashboard.html";
       })
       .catch((error) => {

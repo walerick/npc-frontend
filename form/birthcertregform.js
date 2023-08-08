@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       birthDate: formData.get("dateofbirth"),
       gender: formData.get("gender"),
       placeOfBirth: formData.get("placeofbirth"),
+      stateOfOrigin: formData.get("stateOfOrigin"),
       fatherName: formData.get("fathername"),
       motherName: formData.get("mothername"),
       lga: formData.get("lga"),

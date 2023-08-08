@@ -9,13 +9,6 @@ body {
   
   .certificate {
     background-color: rgb(222, 231, 222);
-    background-image: url(/images/kisspng-banner-john-death-fancy-financial-postage-stamps-5b3f690c5ce5e4.6453648215308823163805.png);
-    background-blend-mode:soft-light;
-    background-repeat: no-repeat;
-    background-size: contain;
-    
-    background-position: center;
-    background-attachment: scroll;
     border: 1px solid #ccc;
     padding: 20px;
     width: 600px;
@@ -23,6 +16,7 @@ body {
   }
   header{
     text-align: center;
+    margin-bottom: 3rem;
   }
 
   header img{
@@ -48,13 +42,13 @@ body {
   }
 
   .certificate-details p{
-    font-weight:900;
+    font-weight: 900;
   }
   
   .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   
   .column {

@@ -3,6 +3,8 @@ function getNINFromLocalStorage() {
   return localStorage.getItem("nin");
 }
 
+const staffName = localStorage.getItem("staffName");
+
 // Function to fetch and display birth details
 function displayBirthDetails() {
   const nin = getNINFromLocalStorage();
@@ -22,7 +24,7 @@ function displayBirthDetails() {
           <div class="row">
             <div class="column">
               <h3>Name:</h3>
-              <p>${data.childName}</p>
+              <p>${data.childName.toUpperCase()}</p>
             </div>
             <div class="column">
               <h3>Date of Birth:</h3>
@@ -32,23 +34,43 @@ function displayBirthDetails() {
           <div class="row">
             <div class="column">
               <h3>Place of Birth:</h3>
-              <p>${data.placeOfBirth}</p>
+              <p>${data.placeOfBirth.toUpperCase()}</p>
             </div>
             <div class="column">
               <h3>Gender:</h3>
-              <p>${data.gender}</p>
+              <p>${data.gender.toUpperCase()}</p>
             </div>
           </div>
+
           <div class="row">
             <div class="column">
               <h3>Father's Name:</h3>
-              <p>${data.fatherName}</p>
+              <p>${data.fatherName.toUpperCase()}</p>
             </div>
             <div class="column">
               <h3>Mother's Name:</h3>
-              <p>${data.motherName}</p>
+              <p>${data.motherName.toUpperCase()}</p>
+            </div>
+          </div>          
+
+          <div class="row">
+            <div class="column">
+              <h3>State Of Origin:</h3>
+              <p>${data.stateOfOrigin.toUpperCase()}</p>
             </div>
           </div>
+
+          <div class="row">
+            <div class="column">
+              <h3></h3>
+              <p></p>
+            </div>          
+            <div class="column">
+              <br>
+              <h3>Signed by:</h3>
+              <p>${staffName.toLocaleUpperCase()}</p>
+            </div>
+          </div
         `;
     })
     .catch((error) => {

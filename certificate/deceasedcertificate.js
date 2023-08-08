@@ -3,8 +3,10 @@ function getNINFromLocalStorage() {
   return localStorage.getItem("nin");
 }
 
+const staffName = localStorage.getItem("staffName");
+
 // Function to fetch and display birth details
-function displayBirthDetails() {
+function displayDeathDetails() {
   const nin = getNINFromLocalStorage();
 
   // Make the request to get the birth details
@@ -22,31 +24,51 @@ function displayBirthDetails() {
             <div class="row">
               <div class="column">
                 <h3>Name:</h3>
-                <p>${data.deathName}</p>
+                <p>${data.deathName.toUpperCase()}</p>
               </div>
               <div class="column">
-                <h3>Date of Birth:</h3>
+                <h3>Date of Death:</h3>
                 <p>${data.dateAtDeath}</p>
               </div>
             </div>
             <div class="row">
               <div class="column">
-                <h3>Place of Birth:</h3>
-                <p>${data.placeOfDeath}</p>
+                <h3>Place of Death:</h3>
+                <p>${data.placeOfDeath.toUpperCase()}</p>
               </div>
               <div class="column">
                 <h3>Gender:</h3>
-                <p>${data.deathGender}</p>
+                <p>${data.deathGender.toUpperCase()}</p>
               </div>
             </div>
+
+            <div class="row">
+            <div class="column">
+              <h3>Father's Name:</h3>
+              <p>${data.deathFather.toUpperCase()}</p>
+            </div>
+            <div class="column">
+              <h3>Mother's Name:</h3>
+              <p>${data.deathMother.toUpperCase()}</p>
+            </div>
+          </div>
+
             <div class="row">
               <div class="column">
-                <h3>Father's Name:</h3>
-                <p>${data.fatherName}</p>
+                <h3>State Of Origin:</h3>
+                <p>${data.stateOfOrigin.toUpperCase()}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column">
+                <h3></h3>
+                <p></p>
               </div>
               <div class="column">
-                <h3>Mother's Name:</h3>
-                <p>${data.motherName}</p>
+                <br>
+                <h3>Signed by:</h3>
+                <p>${staffName.toLocaleUpperCase()}</p>
               </div>
             </div>
           `;
@@ -59,5 +81,5 @@ function displayBirthDetails() {
 
 // Call the function to display birth details when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  displayBirthDetails();
+  displayDeathDetails();
 });

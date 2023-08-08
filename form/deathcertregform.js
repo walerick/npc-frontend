@@ -74,6 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
       dateAtDeath: formData.get("dod"),
       deathGender: formData.get("sex"),
       placeOfDeath: formData.get("address"),
+      stateOfOrigin: formData.get("stateOfOrigin"),
+      deathFather: formData.get("deathFather"),
+      deathMother: formData.get("deathMother"),
     };
 
     // Save the birthDetails object in the local storage as a JSON string

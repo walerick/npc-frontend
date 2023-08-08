@@ -72,13 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const childname = document.getElementById("childname").value;
     const dateofbirth = document.getElementById("dateofbirth").value;
     const placeofbirth = document.getElementById("placeofbirth").value;
-    const age = document.getElementById("age").value;
 
     // Step 4: Create the AttestationRequest object
     const attestRequest = {
       attestName: childname,
       attestDate: dateofbirth,
-      attestAge: age,
       attestLg: placeofbirth,
     };
 
@@ -95,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
       childname,
       dateofbirth,
       placeofbirth,
-      age,
       nin,
       mothername,
       motherState,

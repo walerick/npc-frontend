@@ -47,13 +47,11 @@
         <label for="address">Address of Usual place of Residence:</label>
         <input type="text" id="motherAddress" name="motherAddress" required>  
 
-        <label for="age">Age at Birth of Child:</label>
-        <input type="text" id="motherAge" name="motherAge" required>
-
-
         
         <label for="maritalStatus">Marital Status:</label>
-        <input type="text" id="motherMaritalStatus" name="motherMaritalStatus" required> 
+        <input type="radio" id="motherMartitalStatus" name="motherMaritalStatus" value="Married"> Married
+        <input type="radio" id="motherMartitalStatus" name="motherMaritalStatus" value="Divorced"> Divorced
+        <input type="radio" id="motherMartitalStatus" name="motherMaritalStatus" value="Single"> Single <br>
 
         <label for="nationality">Nationality:</label>
         <input type="radio" id="motherNationality" name="motherNationality" value="Nigerian"> Nigerian
@@ -61,9 +59,11 @@
         
 
 
-        <label for="stateOfOrigin">State of Origin:</label>
-        <select name="stateOfOrigin" id="stateOfOrigin">
+        <label for="m">State of Origin:</label>
+        <select name="m" id="m">
           <option value="Osun">Osun</option>
+          <option value="Anambra">Anambra</option>
+          <option value="Lagos">Lagos</option>
         </select>
 
         <label for="lga">Local Government:</label>
@@ -87,11 +87,11 @@
         <label for="address">Address of Usual place of Residence:</label>
         <input type="text" id="fatherAddress" name="fatherAddress" required> 
 
-        <label for="age">Age at Birth of Child:</label>
-        <input type="text" id="fatherAge" name="fatherAge" required>
 
         <label for="maritalStatus">Marital Status:</label>
-        <input type="text" id="fatherMaritalStatus" name="fatherMaritalStatus" required> 
+        <input type="radio" id="fatherMartitalStatus" name="fatherMaritalStatus" value="Married"> Married 
+        <input type="radio" id="fatherMartitalStatus" name="fatherMaritalStatus" value="Divorced"> Divorced
+        <input type="radio" id="fatherMartitalStatus" name="fatherMaritalStatus" value="Single"> Single <br>
 
         <label for="nationality">Nationality:</label>
         <input type="radio" id="fatherNationality" name="fatherNationality" value="Nigerian"> Nigerian
@@ -100,6 +100,8 @@
         <label for="stateOfOrigin">State of Origin:</label>
         <select name="stateOfOrigin" id="stateOfOrigin">
           <option value="osun">Osun</option>
+          <option value="Anambra">Anambra</option>
+          <option value="Lagos">Lagos</option>
         </select>
 
         <label for="lga">Local Government:</label>
