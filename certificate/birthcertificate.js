@@ -1,4 +1,5 @@
 // Function to get the NIN from localStorage
+// checking git
 function getNINFromLocalStorage() {
   return localStorage.getItem("nin");
 }
