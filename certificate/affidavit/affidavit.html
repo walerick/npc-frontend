@@ -29,7 +29,7 @@
                 2. That my name is <span class="attest-name">JOHN DOE MILL</span>. <br>
             </p>
             <p>
-                3.That I was born on the <span class="attest-date">22-05-2023</span> at <span class="lga">Osogbo</span> Local Government , in <span class="state">Osun state</span> of Nigeria.<br>
+                3.That I was born on the <span class="attest-date">22-05-2023</span> at <span class="lga">Osogbo</span> Local Government , in <span class="state">OSUN STATE</span> of Nigeria.<br>
             </p>
             <p>
                 4. That at the time of my birth, my date of birth was not registered officially, but it was recorded in te family birth Register, for record purposes.<br>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="signature" style="text-align: right;">
-            <p>Signed by Registrar</p>
+            <p>Signed by <span class="registrarName">Registrar</span></p>
         </div>
 
         <div class="affidavit-section">
@@ -59,6 +59,7 @@
    <!-- Add this script tag in the <head> section of your HTML file -->
 <!-- Add this script tag in the <head> section of your HTML file -->
     <script>
+        const registrarName = localStorage.getItem("registrarName") 
         // Function to format the date to "day-month-year" format
         function formatDateToDMY(dateString) {
           const dateObj = new Date(dateString);
@@ -84,18 +85,20 @@
       
             // Update the HTML elements with the fetched data
             document.querySelector('.attest-id').textContent = data.attestId;
-            document.querySelector('.attest-name').textContent = data.attestName;
-            document.querySelector('.attest-namex').textContent = data.attestName;
+            document.querySelector('.attest-name').textContent = data.attestName.toUpperCase();
+            document.querySelector('.attest-namex').textContent = data.attestName.toUpperCase();
 
-            document.querySelector('.fatherlga').textContent = data.attestLg;
-            document.querySelector('.placeofbirth').textContent = data.attestPlaceOfBirth;
+            document.querySelector('.fatherlga').textContent = data.attestLg.toUpperCase();
+            document.querySelector('.placeofbirth').textContent = data.attestLg.toUpperCase();
+
+            document.querySelector('.registrarName').textContent = registrarName;
             
             // Format the date to "day-month-year" format and update the HTML element
             const formattedDate = formatDateToDMY(data.attestDate);
             document.querySelector('.attest-date').textContent = formattedDate;
             
-            document.querySelector('.lga').textContent = data.attestLg;
-            document.querySelector('.state').textContent = data.attestState;
+            document.querySelector('.lga').textContent = data.attestLg.toUpperCase();
+            document.querySelector('.state').textContent = data.attestState.toUpperCase();
           } catch (error) {
             console.error('Error fetching data:', error);
           }

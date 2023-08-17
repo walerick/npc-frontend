@@ -26,8 +26,8 @@ document
         }
       })
       .then((data) => {
-        localStorage.setItem("staffName", data.username);
-        window.location.href = "/staff/dashboard.html";
+        localStorage.setItem("registrarName", data.username);
+        window.location.href = "/registrar/dashboard.html";
       })
       .catch((error) => {
         // Handle login failure or any other errors
