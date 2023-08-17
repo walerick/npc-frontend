@@ -72,12 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const childname = document.getElementById("childname").value;
     const dateofbirth = document.getElementById("dateofbirth").value;
     const placeofbirth = document.getElementById("placeofbirth").value;
+    const stateoforigin = document.getElementById("stateoforigin").value;
 
     // Step 4: Create the AttestationRequest object
     const attestRequest = {
       attestName: childname,
       attestDate: dateofbirth,
       attestLg: placeofbirth,
+      stateOfOrigin: stateoforigin,
     };
 
     // Step 2: Extract data from the form
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fathername,
       fatherState,
       fatherLga,
+      stateoforigin,
     };
 
     // Step 4: Store the form data in localStorage

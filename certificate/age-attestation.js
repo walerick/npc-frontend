@@ -20,7 +20,7 @@ function displayBirthDetails() {
     .then((data) => {
       const certificateDetails = document.getElementById("certificateDetails");
       certificateDetails.innerHTML = `
-            <h2>Registration Number: <span>#${data.attestId}</span></h2>
+            <h2>Registration Number: <span>#${data.attestId.toUpperCase()}</span></h2>
             <div class="row">
               <div class="column">
                 <h3>Name:</h3>
