@@ -1,40 +1,39 @@
-// login.js
+document
+  .querySelector(".login-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the form from submitting normally
 
-localStorage.setItem("registrarUsername", "immigration");
-localStorage.setItem("registrarPassword", "password");
+    var form = event.target;
+    var data = new FormData(form);
+    var jsonData = {};
 
-// Function to retrieve a value from local storage
-function getFromLocalStorage(key) {
-  return localStorage.getItem(key);
-}
+    for (var [key, value] of data.entries()) {
+      jsonData[key] = value;
+    }
 
-// Function to verify the user credentials
-function verifyUser(username, password) {
-  const registrarUsername = getFromLocalStorage("registrarUsername");
-  const registrarPassword = getFromLocalStorage("registrarPassword");
-
-  if (username === registrarUsername && password === registrarPassword) {
-    // Credentials are correct, proceed with login
-    // For now, let's just show a success message
-    window.location.href = "/registrar/dashboard.html";
-  } else {
-    // Credentials are incorrect, show an error message
-    document.getElementById("error-message").innerText =
-      "Invalid username or password.";
-  }
-}
-
-// Function to handle form submission
-function handleFormSubmit(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  const form = event.target;
-  const username = form.username.value;
-  const password = form.password.value;
-
-  verifyUser(username, password);
-}
-
-// Listen for form submission event
-const loginForm = document.querySelector(".login-form");
-loginForm.addEventListener("submit", handleFormSubmit);
+    fetch("http://localhost:8080/api/v1/registrar/registrar-login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Login failed");
+        }
+      })
+      .then((data) => {
+        localStorage.setItem("staffName", data.username);
+        window.location.href = "/staff/dashboard.html";
+      })
+      .catch((error) => {
+        // Handle login failure or any other errors
+        var errorElement = document.getElementById("error-message");
+        errorElement.textContent =
+          "Invalid credentials. Contact Admin to retrieve password.";
+        console.error(error);
+      });
+  });

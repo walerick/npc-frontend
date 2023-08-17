@@ -32,7 +32,8 @@ document
       .catch((error) => {
         // Handle login failure or any other errors
         var errorElement = document.getElementById("error-message");
-        errorElement.textContent = "Invalid username or password.";
+        errorElement.textContent =
+          "Invalid credentials. Contact Admin to retrieve password.";
         console.error(error);
       });
   });
