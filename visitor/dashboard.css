@@ -69,12 +69,14 @@ button {
 }
 
 .modal-content {
-  background-color: rgb(222, 231, 222);
+  /* background-color: rgb(222, 231, 222); */
+  background-color: white;
+  border-radius: 4px;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Adjust the width of the modal */
-  max-width: 600px; /* Limit the maximum width of the modal */
+  max-width: 400px; /* Limit the maximum width of the modal */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   position: relative;
 }

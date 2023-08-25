@@ -9,6 +9,16 @@ body {
   
   .certificate {
     background-color: rgb(222, 231, 222);
+
+    background-image: url(/images/stamp\ 2.jpg);
+    background-blend-mode:soft-light;
+    background-repeat: no-repeat;
+    background-size: 30%;
+
+    background-position-x: 80%;
+    background-position-y: 80%;
+    background-attachment: scroll;
+
     border: 1px solid #ccc;
     padding: 20px;
     width: 600px;

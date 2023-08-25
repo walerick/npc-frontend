@@ -1,3 +1,4 @@
+const staffName = localStorage.getItem("staffName");
 function searchBirthCertificate() {
   // Get the birth ID from the input field
   const birthid = document.getElementById("birthidInput").value;
@@ -6,7 +7,42 @@ function searchBirthCertificate() {
   fetch(`http://localhost:8080/api/v1/user/birth-by-id?birthId=${birthid}`)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Birth certificate not found.");
+        // throw new Error("Birth certificate not found.");
+        fetch(
+          `http://localhost:8080/api/v1/user/death-by-id?deathId=${birthid}`
+        )
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Certificate not found.");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            // Update the certificate modal with the retrieved birth certificate details
+            const certificateModal =
+              document.getElementById("certificateModal");
+            const certificateDetails =
+              document.getElementById("certificateDetails");
+
+            certificateDetails.innerHTML = `
+              <p>Death Certificate found...</p>
+
+              <h3>Registration Number:  <span>#${data.deathId}</span></h3>
+              <h3>Name Of Applicant:  <span>${data.deathName}</span></h3>
+              <h3>State Issued:  <span>Osun State</span></h3>
+              <h3>Approved by :  <span>${staffName}</span></h3>
+              <a href="/certificate/deceasedcertificate.html"><button>View Certificate</button></a>
+            `;
+
+            // Display the modal
+            certificateModal.style.display = "block";
+          })
+          .catch((error) => {
+            console.error(error);
+            alert("Certificate not found.");
+          });
+
+        // ++++++++++++++++++++++++++++++++
       }
       return response.json();
     })
@@ -16,45 +52,16 @@ function searchBirthCertificate() {
       const certificateDetails = document.getElementById("certificateDetails");
 
       certificateDetails.innerHTML = `
-          <h2>Registration Number: <span>#${data.birthId}</span></h2>
-          <div class="row">
-            <div class="column">
-              <h3>Name:</h3>
-              <p>${data.childName}</p>
-            </div>
-            <div class="column">
-              <h3>Date of Birth:</h3>
-              <p>${data.birthDate}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column">
-              <h3>Place of Birth:</h3>
-              <p>${data.placeOfBirth}</p>
-            </div>
-            <div class="column">
-              <h3>Gender:</h3>
-              <p>${data.gender}</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column">
-              <h3>Father's Name:</h3>
-              <p>${data.fatherName}</p>
-            </div>
-            <div class="column">
-              <h3>Mother's Name:</h3>
-              <p>${data.motherName}</p>
-            </div>
-          </div>
+          <p>Birth Certificate found...</p>      
+          <h3>Registration Number:  <span>#${data.birthId}</span></h3>
+          <h3>Name Of Applicant:  <span>${data.childName}</span></h3>
+          <h3>State Issued:  <span>Osun State</span></h3>
+          <h3>Approved by :  <span>${staffName}</span></h3>
+          <a href="/certificate/birthcertificate.html"><button>View Certificate</button></a>
         `;
 
       // Display the modal
       certificateModal.style.display = "block";
-    })
-    .catch((error) => {
-      console.error(error);
-      alert("Birth certificate not found.");
     });
 }
 

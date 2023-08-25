@@ -41,55 +41,112 @@ a{
   .nav a {
     color: #000;
   }
-  
-  /* Content */
-  .content {
-    background-color: #fff;
-    position: relative;
-  }
-  .banner-tag{
-    position: absolute;
-    margin: 10rem;
-  }
-  .banner-tag h2 {
-    color: #ffffff;
-    font-size: 40px;
-  }
-  .banner-tag a{
-    color: #4dac76;
-  }
-  .content img {
-    width: 100%;
+
+  .select-container {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
   }
 
-  /* Button */
-  button{
-    background-color: #f3f4f6;
-    color: black;
+  select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 16px;
-    padding: 15px 30px;
-    border-radius: 5px;
+    color: #333333;
+  }
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #bca161;
-  }
-  .approve-btn{
-    background-color: lightblue;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #f3f4f6;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-block: 1rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content button {
     color: black;
-    padding: 20px;
-    text-align: center;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    margin: 10px;
+    margin-left: 20px;
+
+    display: block;
+}
+
+.dropdown-content button:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+table {
+    width:60%;
+    margin-inline: auto;
+    margin-top: 2rem;
+}
+table, th, td {
+    border: 0.5px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+.role-details tr:nth-child(even) {
+    background-color: #eee;
+}
+.role-details tr:nth-child(odd) {
+   background-color:#fff;
+}
+.role-details th	{
+    /* background-color: rgb(30, 99, 30); */
+    background-color: rgb(109, 80, 8);
+    color: white;
+}
+
+
+/* button{
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
   }
+
+  button:hover{
+    background-color: #45a049;
+  }   */
   
-  .footer p {
-    margin-bottom: 0;
-  }
   

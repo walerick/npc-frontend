@@ -76,13 +76,13 @@ th, td {
     padding: 5px;
     text-align: left;
 }
-.birth-details tr:nth-child(even) {
+.death-details tr:nth-child(even) {
     background-color: #eee;
 }
-.birth-details tr:nth-child(odd) {
+.death-details tr:nth-child(odd) {
    background-color:#fff;
 }
-.birth-details th	{
+.death-details th	{
     background-color: rgb(30, 99, 30);
     color: white;
 }

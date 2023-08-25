@@ -13,9 +13,9 @@ body {
     background-blend-mode:soft-light;
     background-repeat: no-repeat;
     background-size: contain;
-    
     background-position: center;
     background-attachment: scroll;
+    
     border: 1px solid #ccc;
     padding: 20px;
     width: 600px;

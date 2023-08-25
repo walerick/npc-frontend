@@ -9,7 +9,7 @@
   <div class="content">
     <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="" style="width: 65px;">
     <h2>Search Certificate</h2>
-    <input type="text" id="birthidInput" placeholder="Enter birth ID to search">
+    <input type="text" id="birthidInput" placeholder="Enter ID to search">
     <button onclick="searchBirthCertificate()">Search</button>
   </div>
 
@@ -17,14 +17,12 @@
   <div id="certificateModal" class="modal">
     <div class="modal-content">
       <div class="header">
-        <img src="/images/Coat_of_arms_of_Nigeria.svg.png" alt="">
-        <h2>FEDERAL REPUBLIC OF NIGERIA</h2>
-        <h3>Birth Certificate</h3>
-        <p>Issued under the Births and Deaths Etc. (Compulsory Registration) Decree No.69 of 1992</p>
       </div>
 
       <span class="close" onclick="closeModal()">&times;</span>
-      <div id="certificateDetails"></div>
+      <div id="certificateDetails">
+      </div>
+
     </div>
   </div>
 

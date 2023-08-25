@@ -17,11 +17,30 @@
       <li><a href="/admin/registervisitor.html">Register New Visitor</a></li>
     </ul>
   </nav>
-  <div class="content">
-    <img src="/images/2023-National-Population-Commission-NPC-Adhoc-Staff-Recruitment-Application-Guidelines.png" alt="">
+  <div class="dropdown" style="float:right;">
+    <!-- <button class="dropbtn">Filter Application</button> -->
+    <div class="select-container">
+      <label for="role">Select Role:</label>
+      <select name="role" id="role">
+        <option value="npc" id="npc-btn">NPC Staff</option>
+        <button id="registrar-btn"><option value="registrar">Registrar</option></button>
+        <button id="visitor-btn"><option value="visitor">Visitor</option></button>
+      </select>
+    </div>
   </div>
-  <footer class="footer">
-    <p>Copyright &copy; 2023 National Population Commission</p>
-  </footer>
+  <table class="role-details">
+    <thead>
+      <tr>
+        <th>S/N</th>
+        <th>Username</th>	
+        <th>Code</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="roleTable">
+      <!-- Table rows will be dynamically generated here -->
+    </tbody>
+  </table>
+  <script src="/admin/dashboard.js"></script>
 </body>
 </html>

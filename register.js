@@ -33,11 +33,11 @@ document
     })
       .then((response) => {
         // Handle the response from the backend
-        if (response.ok) {
-          window.location.href = "/index.html";
+        if (!response.ok) {
+          errorElement.textContent = "Nin Already used to Create account.";
         }
         // Handle the error message from the backend
-        errorElement.textContent = "Nin Already used to Create account.";
+        window.location.href = "/index.html";
       })
       .catch((error) => {
         // Handle any errors
