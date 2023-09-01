@@ -65,7 +65,7 @@ function displayDeathDetails() {
                 <h3></h3>
                 <p></p>
               </div>
-              <div class="column">
+              <div class="column" id="stamp">
                 <br>
                 <h3>Signed by:</h3>
                 <p>${staffName.toLocaleUpperCase()}</p>

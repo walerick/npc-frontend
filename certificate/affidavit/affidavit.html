@@ -45,12 +45,12 @@
             </p>
         </div>
 
-        <div class="signature" style="text-align: right;">
-            <p>Signed by <span class="registrarName">Registrar</span></p>
+        <div class="signature" style="text-align: right;" >
+            <p id="stamp">Signed by <span class="registrarName">Registrar</span></p>
         </div>
 
         <div class="affidavit-section">
-            <p><strong>Sworn to at the National Industrial Court Registry, Osogbo on this date.</strong></p>
+            <p>Sworn to at the National Industrial Court Registry, Osogbo on this date.</p>
         </div>
 
 
@@ -99,7 +99,6 @@
             document.querySelector('.attest-date').textContent = formattedDate;
             
             document.querySelector('.lga').textContent = data.attestLg.toUpperCase();
-            document.querySelector('.state').textContent = data.attestState.toUpperCase();
           } catch (error) {
             console.error('Error fetching data:', error);
           }
